@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c7465">
+  <meta name="description" content="ห้องอ่านติวสอบ INT161 Backend ภาษาไทย บทเรียนจาก PDF และ transcript G1/G2 คำศัพท์ 110 คำ และข้อสอบฝึกพร้อมเฉลย">
+  <title>ห้องอ่าน Backend · INT161</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="data.js"></script>
+  <script defer src="study-core.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">ข้ามไปเนื้อหา</a>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#/home" aria-label="ห้องอ่าน Backend หน้าแรก">
+      <span class="brand-mark" aria-hidden="true">{b}</span>
+      <span><strong>ห้องอ่าน Backend</strong><small>INT161 · STUDY ROOM</small></span>
+    </a>
+    <div class="sidebar-label">พื้นที่อ่านของคุณ</div>
+    <nav aria-label="เมนูหลัก" id="primary-nav"></nav>
+    <section class="side-progress" aria-labelledby="side-progress-title">
+      <div class="progress-heading"><span id="side-progress-title">ค่อย ๆ ไปทีละบท</span><strong id="progress-count">0 / 13</strong></div>
+      <progress id="reading-progress" value="0" max="13" aria-label="ความคืบหน้าการอ่าน"></progress>
+      <p>ทุกบทที่เข้าใจ พาใกล้วันพร้อมสอบอีกนิด</p>
+    </section>
+    <div class="sidebar-bottom">
+      <a href="#/sources" class="quiet-link">แหล่งอ้างอิงและกติกาสอบ <span aria-hidden="true">↗</span></a>
+      <a href="backend-study-offline.zip" download class="download-link">↓ ดาวน์โหลดไว้อ่านออฟไลน์</a>
+      <span class="local-hint">ความคืบหน้าบันทึกในเบราว์เซอร์นี้</span>
+    </div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar">
+      <button type="button" id="menu-toggle" class="icon-button mobile-menu" aria-expanded="false" aria-controls="sidebar" aria-label="เปิดเมนู">☰</button>
+      <search class="global-search">
+        <form id="search-form">
+          <label for="global-search" class="sr-only">ค้นหาบทเรียนหรือคำศัพท์</label>
+          <span class="search-symbol" aria-hidden="true">⌕</span>
+          <input type="search" id="global-search" placeholder="ค้นหาบทเรียน คำศัพท์ หรือสิ่งที่อยากรู้…" maxlength="160">
+          <button type="submit" class="search-submit" aria-label="ค้นหา">↵</button>
+        </form>
+      </search>
+      <div class="topbar-actions">
+        <span class="exam-pill"><span aria-hidden="true"></span>สอบ 21 ต.ค. 2569</span>
+        <button type="button" id="theme-toggle" class="icon-button" aria-label="ใช้โหมดกลางคืน" aria-pressed="false">☾</button>
+      </div>
+    </header>
+    <main id="main" tabindex="-1"></main>
+    <footer class="site-footer"><span>INT161 · Basic Backend Development</span><span>อ่านให้เข้าใจ แล้วลองทำด้วยตัวเอง</span></footer>
+  </div>
+  <div id="announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+  <div class="toast" id="toast" role="status" hidden></div>
+  <dialog id="reset-dialog">
+    <h2>เริ่มทำข้อสอบใหม่</h2>
+    <p>คำตอบและคะแนนฝึกครั้งนี้จะถูกล้าง ความคืบหน้าการอ่านยังอยู่</p>
+    <form method="dialog"><button value="cancel" class="button secondary">กลับไปทำต่อ</button><button value="reset" class="button primary">เริ่มใหม่</button></form>
+  </dialog>
+  <noscript><p class="noscript">กรุณาเปิด JavaScript เพื่อใช้งานห้องอ่าน หรืออ่าน <a href="notes/01_Study_Guide_TH.md">ไฟล์สรุป</a> โดยตรง</p></noscript>
+</body>
+</html>

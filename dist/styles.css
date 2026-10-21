@@ -18,3 +18,18 @@
   @media print{.sidebar,.topbar,.toc,.reader-tools,.chapter-complete,.chapter-navigation,.site-footer,.copy-code,.skip-link{display:none!important}.workspace{margin:0}main{padding:0;max-width:none}.reader-layout{display:block}.reading-article{font-size:11pt}body{background:#fff;color:#000}.code-block{background:#f2f3f2;color:#111;break-inside:avoid}.table-wrap{overflow:visible}a{color:#111}.article-heading h1{font-size:22pt}}
 }
 @layer components { .quiz-option.wrong:has(input:checked){border-color:var(--red);background:var(--red-soft)}.lab-actions{margin-top:18px}#lesson-content h2,#lesson-content h3{scroll-margin-top:105px} }
+@layer components {
+  .exam-summary{margin:24px 0;padding:23px;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+  .exam-summary>header{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:17px}
+  .exam-summary>header h2{font-size:17px;margin:0}
+  .exam-summary>header a{font-size:11px;text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center}
+  .exam-summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+  .exam-summary-grid article{border:1px solid var(--line);background:var(--bg);border-radius:11px;padding:19px}
+  .exam-summary-grid h3{font-size:18px;margin:12px 0 8px;line-height:1.8}
+  .exam-summary-grid p{font-size:12px;line-height:1.9;color:var(--muted);margin:5px 0}
+  .exam-summary-grid p strong{color:var(--ink);font-weight:600}
+  .exam-source{font-size:11px;color:var(--muted);line-height:1.9;margin:15px 0 0}
+  .exam-details{max-width:960px;margin-inline:auto}
+  .exam-operation-grid .lesson-card{min-height:190px}
+  @media(max-width:740px){.exam-summary{padding:18px;margin:18px 0}.exam-summary-grid{grid-template-columns:1fr}.exam-summary>header h2{font-size:14px}.exam-summary>header a{font-size:10px}.exam-summary-grid h3{font-size:17px}.exam-source{font-size:10px}}
+}
